@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MaterialTest } from './test/material-test/material-test';
+import { CheckboxOverviewExample } from './test/material-test1/material-test1';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,8 @@ import { MaterialTest } from './test/material-test/material-test';
   styleUrl: './app.css',
   imports: [
     RouterOutlet,
-    MaterialTest
+    MaterialTest,
+    CheckboxOverviewExample
   ],
 })
 export class App {
