@@ -9,4 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
   template: './sidebar.html',
   styles: './sidebar.css'
 })
-export class SidebarComponent { }
+export class SidebarComponent {
+  
+ }
