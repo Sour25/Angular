@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { SidebarComponent } from './layout/sidebar/sidebar';
 import { TopbarComponent } from './layout/topbar/topbar';
+import { FoodItemComponent } from './menu/food-items/food-items';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,8 @@ import { TopbarComponent } from './layout/topbar/topbar';
     RouterOutlet,
     SidebarComponent,
     TopbarComponent,
+    FoodItemComponent
+
   ],
   templateUrl: './app.html',
 })
