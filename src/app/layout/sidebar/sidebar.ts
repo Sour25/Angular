@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
-  templateUrl: './sidebar.html',
-  styleUrl: './sidebar.css',
+  standalone: true,
+  imports: [MatIconModule, MatButtonModule],
+  template: './sidebar.html',
+  styles: './sidebar.css'
 })
-export class Sidebar {}
+export class SidebarComponent { }

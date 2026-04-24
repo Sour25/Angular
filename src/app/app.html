@@ -8,9 +8,29 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
+<div class="container">
 
-<app-material-test></app-material-test>
-<app-material-test1></app-material-test1>
-<app-material-test2></app-material-test2>
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
 
-<router-outlet />
+    <!-- Main -->
+    <div class="main">
+
+        <!-- Top -->
+        <app-topbar></app-topbar>
+
+        <!-- Content -->
+        <div class="content">
+
+            <!-- Left: Menu -->
+            <div class="menu">
+                <app-menu-list></app-menu-list>
+            </div>
+
+            <!-- Right: Cart -->
+            <app-cart-panel></app-cart-panel>
+
+        </div>
+    </div>
+
+</div>
