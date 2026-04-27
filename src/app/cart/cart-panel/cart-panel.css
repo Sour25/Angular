@@ -1,0 +1,227 @@
+.invoice-panel {
+    width: 300px;
+    min-width: 300px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: hidden;
+}
+
+.invoice-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    flex-shrink: 0;
+}
+
+/* ── Cart Items ── */
+.invoice-items {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+}
+
+.invoice-items::-webkit-scrollbar {
+    width: 3px;
+}
+
+.invoice-items::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 4px;
+}
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 0;
+    gap: 6px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.empty-cart span {
+    font-size: 32px;
+}
+
+.invoice-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.inv-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.inv-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.inv-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inv-meta {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.inv-note {
+    font-size: 10px;
+    color: #94a3b8;
+}
+
+.inv-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.inv-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.remove-btn {
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    border-radius: 50%;
+    transition: color 0.15s, background 0.15s;
+}
+
+.remove-btn:hover {
+    color: #ef4444;
+    background: #fef2f2;
+}
+
+.remove-btn mat-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+/* ── Summary ── */
+.payment-summary {
+    flex-shrink: 0;
+}
+
+.summary-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.summary-row.total {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 4px;
+}
+
+/* ── Payment Methods ── */
+.payment-methods {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.pay-method {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 4px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 500;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.pay-method mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.pay-method:hover {
+    border-color: #93c5fd;
+}
+
+.pay-method.active {
+    border-color: #2563eb;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+/* ── Place Order ── */
+.place-order-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    flex-shrink: 0;
+}
+
+.place-order-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.place-order-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.place-order-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}

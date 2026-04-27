@@ -1,1 +1,73 @@
-<p>cart-panel works!</p>
+<aside class="invoice-panel">
+    <h2 class="invoice-title">Invoice</h2>
+
+    <!-- Cart items -->
+    <div class="invoice-items">
+        @if (cart.length === 0) {
+        <div class="empty-cart">
+            <span>🛒</span>
+            <p>No items yet</p>
+        </div>
+        }
+        @for (item of cart; track item.id) {
+        <div class="invoice-row">
+            <img [src]="item.image" [alt]="item.name" class="inv-img" />
+            <div class="inv-info">
+                <p class="inv-name">{{ item.name }}</p>
+                <p class="inv-meta">{{ item.quantity }}x</p>
+                <p class="inv-note">{{ item.note }}</p>
+            </div>
+            <div class="inv-right">
+                <span class="inv-price">${{ (item.price * item.quantity).toFixed(1) }}</span>
+                <button class="remove-btn" (click)="removeOne(item)">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </div>
+        </div>
+        }
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!-- Payment Summary -->
+    <div class="payment-summary">
+        <h3 class="summary-title">Payment Summary</h3>
+        <div class="summary-row">
+            <span>Sub Total</span>
+            <span>${{ subTotal }}</span>
+        </div>
+        <div class="summary-row">
+            <span>Tax</span>
+            <span>${{ tax }}</span>
+        </div>
+        <mat-divider style="margin: 8px 0"></mat-divider>
+        <div class="summary-row total">
+            <span>Total Payment</span>
+            <span>${{ total }}</span>
+        </div>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="payment-methods">
+        <button class="pay-method" [class.active]="activePayment() === 'credit'" matRipple
+            (click)="activePayment.set('credit')">
+            <mat-icon>credit_card</mat-icon>
+            <span>Credit Card</span>
+        </button>
+        <button class="pay-method" [class.active]="activePayment() === 'paylater'" matRipple
+            (click)="activePayment.set('paylater')">
+            <mat-icon>schedule</mat-icon>
+            <span>Paylater</span>
+        </button>
+        <button class="pay-method" [class.active]="activePayment() === 'cash'" matRipple
+            (click)="activePayment.set('cash')">
+            <mat-icon>payments</mat-icon>
+            <span>Cash Payout</span>
+        </button>
+    </div>
+
+    <!-- Place Order -->
+    <button class="place-order-btn" (click)="placeOrder()" [disabled]="cart.length === 0">
+        Place An Order
+    </button>
+</aside>

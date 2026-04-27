@@ -7,10 +7,17 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, MatTooltipModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule
+    
+  ],
 })
+  
 export class SidebarComponent {
   activeIndex = signal(0);
 
