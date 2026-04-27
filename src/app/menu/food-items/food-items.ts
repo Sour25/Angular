@@ -4,9 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-food-item',
-  standalone: true,
+  standalone: true, 
   imports: [MatCardModule, MatButtonModule],
-  templateUrl: './food-item.html',
+  templateUrl: './food-items.html',
 })
 export class FoodItemComponent {
   @Input() food!: any;

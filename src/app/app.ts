@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './layout/sidebar/sidebar';
 import { TopbarComponent } from './layout/topbar/topbar';
 import { FoodItemComponent } from './menu/food-items/food-items';
+import { MenuListComponent } from './menu/menu-list/menu-list';
+import { CartPanelComponent } from './cart/cart-panel/cart-panel';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,8 @@ import { FoodItemComponent } from './menu/food-items/food-items';
     RouterOutlet,
     SidebarComponent,
     TopbarComponent,
-    FoodItemComponent
+    MenuListComponent,
+    CartPanelComponent
 
   ],
   templateUrl: './app.html',
