@@ -1,4 +1,22 @@
-<div class="sidebar">
-    <button mat-icon-button><mat-icon>home</mat-icon></button>
-    <button mat-icon-button><mat-icon>menu</mat-icon></button>
-</div>
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <mat-icon>settings</mat-icon>
+    </div>
+
+    <nav class="sidebar-nav">
+        @for (item of navItems; track $index) {
+        <button mat-icon-button class="nav-btn" [class.active]="activeIndex() === $index" [matTooltip]="item.label"
+            matTooltipPosition="right" (click)="activeIndex.set($index)">
+            <mat-icon>{{ item.icon }}</mat-icon>
+        </button>
+        }
+    </nav>
+
+    <div class="sidebar-bottom">
+        @for (item of bottomItems; track $index) {
+        <button mat-icon-button class="nav-btn" [matTooltip]="item.label" matTooltipPosition="right">
+            <mat-icon>{{ item.icon }}</mat-icon>
+        </button>
+        }
+    </div>
+</aside>
