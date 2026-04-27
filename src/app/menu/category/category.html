@@ -1,1 +1,12 @@
-<p>category works!</p>
+
+<div class="category-grid">
+    @for (cat of categories; track cat.id) {
+    <button class="cat-card" [class.active]="activeId() === cat.id" matRipple (click)="select(cat.id)">
+        <mat-icon>{{ cat.icon }}</mat-icon>
+        <div class="cat-text">
+            <span class="cat-name">{{ cat.name }}</span>
+            <span class="cat-sub">12 Menu In Stock</span>
+        </div>
+    </button>
+    }
+</div>

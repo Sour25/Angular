@@ -1,13 +1,33 @@
-import { Component, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+
+export interface MenuItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  category: string;
+}
+
+export interface CartItem extends MenuItem {
+  quantity: number;
+  note: string;
+}
+
 @Component({
-  selector: 'app-food-item',
-  standalone: true, 
-  imports: [MatCardModule, MatButtonModule],
+  selector: 'app-food-items',
+  standalone: true,
+  imports: [CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './food-items.html',
+  styleUrl: './food-items.css',
 })
-export class FoodItemComponent {
-  @Input() food!: any;
+export class FoodItemsComponent {
+  @Input() item!: MenuItem;
+  @Input() quantity = 0;
+  @Output() add = new EventEmitter<MenuItem>();
+  @Output() remove = new EventEmitter<MenuItem>();
 }

@@ -1,5 +1,65 @@
-.grid {
+.menu-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 16px;
+    min-width: 0;
+}
+
+.menu-items-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 14px 0;
+    flex-shrink: 0;
+}
+
+.menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 12px;
+    overflow-y: auto;
+    padding-right: 4px;
+    align-content: start;
+}
+
+.menu-grid::-webkit-scrollbar {
+    width: 4px;
+}
+
+.menu-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.menu-grid::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    gap: 8px;
+    color: #94a3b8;
+}
+
+.empty-icon {
+    font-size: 40px;
+}
+
+.empty-state p {
+    font-size: 15px;
 }

@@ -1,4 +1,20 @@
-<div class="grid">
-    <app-food-item *ngFor="let food of foods" [food]="food">
-    </app-food-item>
-</div>
+<section class="menu-panel">
+    <app-category (categoryChange)="onCategoryChange($event)"></app-category>
+
+    <div class="menu-items-section">
+        <h2 class="section-title">{{ getCategoryLabel() }} Menu</h2>
+
+        <div class="menu-grid">
+            @for (item of visibleItems(); track item.id) {
+            <app-food-items [item]="item" [quantity]="getQty(item.id)" (add)="onAdd($event)"
+                (remove)="onRemove($event)">
+            </app-food-items>
+            } @empty {
+            <div class="empty-state">
+                <span class="empty-icon">🍽️</span>
+                <p>No items in this category</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
