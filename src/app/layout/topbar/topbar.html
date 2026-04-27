@@ -1,3 +1,27 @@
-<mat-toolbar>
-    <input matInput placeholder="Search menu..." />
-</mat-toolbar>
+<header class="topbar">
+    <div class="topbar-search">
+        <mat-form-field appearance="outline" class="search-field">
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput placeholder="Search Your Menu Here" [(ngModel)]="searchQuery" />
+        </mat-form-field>
+    </div>
+
+    <div class="topbar-actions">
+        <div class="lang-flags">
+            <span title="English"></span>
+            <span title="Indonesian"></span>
+        </div>
+
+        <button mat-icon-button>
+            <mat-icon>notifications_none</mat-icon>
+        </button>
+
+        <div class="user-profile">
+            <img src="" alt="Sry kimsour" class="avatar" />
+            <div class="user-info">
+                <span class="user-name">Sry Kimsour</span>
+                <span class="user-role">Admin</span>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,92 @@
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px 0;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+.topbar-search {
+    flex: 1;
+    max-width: 480px;
+}
+
+.search-field {
+    width: 100%;
+}
+
+.search-field ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+}
+
+.search-field ::ng-deep .mdc-notched-outline__leading,
+.search-field ::ng-deep .mdc-notched-outline__notch,
+.search-field ::ng-deep .mdc-notched-outline__trailing {
+    border-color: #e2e8f0 !important;
+    background: #fff;
+}
+
+.search-field ::ng-deep .mat-mdc-form-field-infix {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: unset;
+}
+
+.search-field ::ng-deep input::placeholder {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.lang-flags {
+    display: flex;
+    gap: 4px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.user-profile:hover {
+    background: #f1f5f9;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #94a3b8;
+    line-height: 1.2;
+}

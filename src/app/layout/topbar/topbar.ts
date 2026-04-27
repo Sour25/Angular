@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FlexLayoutModule } from '@ngbracket/ngx-layout';
 @Component({
   selector: 'app-topbar',
   standalone: true,
-  imports: [MatToolbarModule, MatInputModule],
-  template: './topbar.html'
+  templateUrl: './topbar.html',
+  styleUrl: './topbar.css',
+  imports: [
+    FormsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FlexLayoutModule
+    
+  ],
 })
-  
-export class TopbarComponent { }
+export class TopbarComponent {
+  searchQuery = '';
+}
