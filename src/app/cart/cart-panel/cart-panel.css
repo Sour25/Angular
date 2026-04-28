@@ -217,8 +217,3 @@
 .place-order-btn:active:not(:disabled) {
     transform: scale(0.98);
 }
-
-.place-order-btn:disabled {
-    background: #cbd5e1;
-    cursor: not-allowed;
-}

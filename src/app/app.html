@@ -9,16 +9,13 @@
 
 <div class="app-shell">
     <app-sidebar></app-sidebar>
-
     <div class="main-content">
         <app-topbar></app-topbar>
-
         <div class="page-body">
-            <div class="menu">
-                <app-menu-list></app-menu-list>
-            </div>
-
-            <app-cart-panel></app-cart-panel>
+            <app-menu-list [cart]="cart" (cartChange)="cart = $event" [class.full-width]="cart.length === 0">
+            </app-menu-list>
+            <app-cart-panel [cart]="cart" (cartChange)="cart = $event">
+            </app-cart-panel>
         </div>
     </div>
 </div>

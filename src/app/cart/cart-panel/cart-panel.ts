@@ -9,10 +9,16 @@ import { CartItem } from '../../menu/food-items/food-items';
 @Component({
   selector: 'app-cart-panel',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, MatDividerModule, MatRippleModule],
   templateUrl: './cart-panel.html',
   styleUrl: './cart-panel.css',
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatRippleModule],
 })
+  
 export class CartPanelComponent {
   @Input() cart: CartItem[] = [];
   @Output() cartChange = new EventEmitter<CartItem[]>();
@@ -42,9 +48,8 @@ export class CartPanelComponent {
     }
     this.cartChange.emit(updated);
   }
-
   placeOrder() {
-    alert(`Order placed! Total: $${this.total}`);
     this.cartChange.emit([]);
   }
+  
 }

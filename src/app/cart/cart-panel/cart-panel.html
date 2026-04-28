@@ -1,14 +1,8 @@
+@if (cart.length > 0) {
 <aside class="invoice-panel">
     <h2 class="invoice-title">Invoice</h2>
 
-    <!-- Cart items -->
     <div class="invoice-items">
-        @if (cart.length === 0) {
-        <div class="empty-cart">
-            <span>🛒</span>
-            <p>No items yet</p>
-        </div>
-        }
         @for (item of cart; track item.id) {
         <div class="invoice-row">
             <img [src]="item.image" [alt]="item.name" class="inv-img" />
@@ -29,7 +23,6 @@
 
     <mat-divider></mat-divider>
 
-    <!-- Payment Summary -->
     <div class="payment-summary">
         <h3 class="summary-title">Payment Summary</h3>
         <div class="summary-row">
@@ -47,7 +40,6 @@
         </div>
     </div>
 
-    <!-- Payment Method -->
     <div class="payment-methods">
         <button class="pay-method" [class.active]="activePayment() === 'credit'" matRipple
             (click)="activePayment.set('credit')">
@@ -66,8 +58,8 @@
         </button>
     </div>
 
-    <!-- Place Order -->
-    <button class="place-order-btn" (click)="placeOrder()" [disabled]="cart.length === 0">
+    <button class="place-order-btn" (click)="placeOrder()">
         Place An Order
     </button>
 </aside>
+}
