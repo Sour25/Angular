@@ -14,7 +14,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule
-    
+  
   ],
 })
   

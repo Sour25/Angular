@@ -16,10 +16,13 @@ import { CartItem } from '../../menu/food-items/food-items';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
-    MatRippleModule],
+    MatRippleModule
+
+  ],
 })
   
 export class CartPanelComponent {
+  
   @Input() cart: CartItem[] = [];
   @Output() cartChange = new EventEmitter<CartItem[]>();
 
@@ -50,6 +53,7 @@ export class CartPanelComponent {
   }
   placeOrder() {
     this.cartChange.emit([]);
+    console.log("this is the selected item", this.cart);
   }
   
-}
+} 

@@ -21,9 +21,14 @@ export interface CartItem extends MenuItem {
 @Component({
   selector: 'app-food-items',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule],
   templateUrl: './food-items.html',
   styleUrl: './food-items.css',
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatButtonModule
+  
+  ],
 })
 export class FoodItemsComponent {
   @Input() item!: MenuItem;

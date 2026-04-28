@@ -41,10 +41,15 @@ const ALL_ITEMS: MenuItem[] = [
 @Component({
   selector: 'app-menu-list',
   standalone: true,
-  imports: [CommonModule, CategoryComponent, FoodItemsComponent],
   templateUrl: './menu-list.html',
   styleUrl: './menu-list.css',
+  imports: [
+    CommonModule,
+    CategoryComponent,
+    FoodItemsComponent
+  ],
 })
+  
 export class MenuListComponent {
   @Input() cart: CartItem[] = [];
   @Output() cartChange = new EventEmitter<CartItem[]>();

@@ -6,10 +6,16 @@ import { MatRippleModule } from '@angular/material/core';
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatRippleModule],
   templateUrl: './category.html',
   styleUrl: './category.css',
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatRippleModule
+    
+  ],
 })
+  
 export class CategoryComponent {
   activeId = signal('lunch');
 
