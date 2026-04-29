@@ -4,7 +4,7 @@ import { TopbarComponent } from './layout/topbar/topbar';
 import { MenuListComponent } from './menu/menu-list/menu-list';
 import { CartPanelComponent } from './cart/cart-panel/cart-panel';
 import { CartItem } from './menu/food-items/food-items';
-import { SubmitTestForm } from './cart/submit-test-form/submit-test-form';
+// import { SubmitTestForm } from './cart/submit-test-form/submit-test-form';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import { SubmitTestForm } from './cart/submit-test-form/submit-test-form';
     TopbarComponent,
     MenuListComponent,
     CartPanelComponent,
-    SubmitTestForm
+    // SubmitTestForm
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
