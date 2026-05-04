@@ -7,7 +7,8 @@
     <nav class="sidebar-nav">
         @for (item of navItems; track $index) {
         <button mat-icon-button class="nav-btn" [class.active]="activeIndex() === $index" [matTooltip]="item.label"
-            matTooltipPosition="right" (click)="activeIndex.set($index)">
+            matTooltipPosition="right"
+             (click)="activeIndex.set($index)">
             <mat-icon>{{ item.icon }}</mat-icon>
         </button>
         }
