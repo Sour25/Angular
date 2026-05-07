@@ -27,5 +27,14 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  cart: CartItem[] = []; 
+
+  cart: CartItem[] = [];
+
+  // page control
+  selectedPage: string = 'default';
+
+  // switch page
+  setPage(page: string) {
+    this.selectedPage = page;
+  }
 }

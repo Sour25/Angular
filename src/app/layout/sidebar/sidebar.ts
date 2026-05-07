@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,15 +14,18 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule
-  
   ],
 })
-  
+
 export class SidebarComponent {
+
   activeIndex = signal(0);
 
+
+  @Output() pageChange = new EventEmitter<string>();
+
   navItems = [
-    { icon: 'grid_view', label: 'Menu' },
+    { icon: 'grid_view', label: 'Menu', page: 'menu' },
     { icon: 'receipt_long', label: 'Orders' },
     { icon: 'calendar_today', label: 'Reservations' },
     { icon: 'bar_chart', label: 'Analytics' },

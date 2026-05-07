@@ -1,0 +1,75 @@
+{
+    "code": 200.0,
+    "message": "Your request is successful.",
+    "result": {
+        "totalPage": 1,
+        "totalElements": 8,
+        "currentPage": 0,
+        "result": [
+            {
+                "id": 3,
+                "enLabel": "Takeo",
+                "khLabel": "តាកែវ",
+                "amount": 10.90,
+                "percentage": 2.00,
+                "summaryType": "the man1"
+            },
+            {
+                "id": 5,
+                "enLabel": "Phnom Penh",
+                "khLabel": "ភ្នំពេញ",
+                "amount": 100.90,
+                "percentage": 20.00,
+                "summaryType": "the man2"
+            },
+            {
+                "id": 6,
+                "enLabel": "Preah Sihanouk",
+                "khLabel": "ព្រះសីហនុ",
+                "amount": 200.10,
+                "percentage": 40.00,
+                "summaryType": "test"
+            },
+            {
+                "id": 8,
+                "enLabel": "Kandal",
+                "khLabel": "កណ្តាល",
+                "amount": 80.90,
+                "percentage": 8.00,
+                "summaryType": "the man2"
+            },
+            {
+                "id": 11,
+                "enLabel": "test",
+                "khLabel": "test",
+                "amount": 300.00,
+                "percentage": 45.09,
+                "summaryType": "test"
+            },
+            {
+                "id": 12,
+                "enLabel": "test",
+                "khLabel": "test",
+                "amount": 34.00,
+                "percentage": 45.00,
+                "summaryType": "test"
+            },
+            {
+                "id": 13,
+                "enLabel": "test",
+                "khLabel": "test",
+                "amount": 234.00,
+                "percentage": 45.00,
+                "summaryType": "test"
+            },
+            {
+                "id": 14,
+                "enLabel": "test",
+                "khLabel": "test",
+                "amount": 34.00,
+                "percentage": 34.00,
+                "summaryType": ""
+            }
+        ]
+    }
+}

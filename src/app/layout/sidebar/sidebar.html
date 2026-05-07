@@ -8,7 +8,8 @@
         @for (item of navItems; track $index) {
         <button mat-icon-button class="nav-btn" [class.active]="activeIndex() === $index" [matTooltip]="item.label"
             matTooltipPosition="right"
-             (click)="activeIndex.set($index)">
+             (click)="activeIndex.set($index); pageChange.emit(item.page)">
+          
             <mat-icon>{{ item.icon }}</mat-icon>
         </button>
         }

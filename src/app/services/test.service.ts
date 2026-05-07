@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class TestService {
 
-    constructor(private http: HttpClient) { }
+  public testapi = 'test-data.json';
 
-    getData() {
-        return this.http.get('https://postman-echo.com/get');
-    }
+  constructor(private http: HttpClient) { }
+
+  public getData(): Observable<any> {
+    return this.http.get<any>(this.testapi);
+  }
 }

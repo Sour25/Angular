@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
-import { TestService } from '../../services/test.service';
 import { CommonModule } from '@angular/common';
 
-export interface Tabledata {
-  position: number;
-  name: string;
-  weight: number;
-  symbol: string;
-}
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
+import { TestService } from '../../services/test.service';
+import { ViewDialog } from '../view-dialog/view-dialog';
 
 @Component({
   selector: 'app-menupage',
@@ -16,34 +16,54 @@ export interface Tabledata {
   templateUrl: './menupage.html',
   styleUrl: './menupage.css',
   imports: [
-    MatTableModule,
     CommonModule,
+    MatTableModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatDialogModule
   ],
 })
 export class TableBasicExample implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = [
+    'position',
+    'name',
+    'weight',
+    'symbol',
+    'star'
+  ];
 
+  dataSource: any[] = [];
 
-  dataSource: Tabledata[] = [];
-
-  constructor(private _testService: TestService) { }
+  constructor(
+    private _testService: TestService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.getTestData();
   }
 
-  public getTestData() {
-    this._testService.getData().subscribe((res: any) => {
-      console.log('API response:', res);
+  public getTestData(): void {
+    this._testService.getData().subscribe((response: any) => {
 
-      // Convert API → table format
-      this.dataSource = Object.keys(res.headers).map((key, index) => ({
-        position: index + 1,
-        name: key,                      
-        weight: res.headers[key].length, 
-        symbol: res.headers[key]        
-      }));
+      if (response.code === 200.0) {
+        this.dataSource = response?.result?.result || [];
+      }
+
     });
+  }
+
+  public onView(): void {
+    this.dialog.open(ViewDialog);
+  }
+
+  public onUpdate(): void {
+
+  }
+
+  public onDelete(): void {
+
   }
 }

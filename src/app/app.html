@@ -8,16 +8,31 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <div class="app-shell">
-    <app-sidebar></app-sidebar>
+
+
+    <app-sidebar (pageChange)="setPage($event)"></app-sidebar>
+
     <div class="main-content">
         <app-topbar></app-topbar>
+
         <div class="page-body">
-            <app-menu-list [cart]="cart" (cartChange)="cart = $event" [class.full-width]="cart.length === 0">
+            @if (selectedPage !== 'menu') {
+
+            <app-menu-list [cart]="cart" (cartChange)="cart = $event">
             </app-menu-list>
+
             <app-cart-panel [cart]="cart" (cartChange)="cart = $event">
             </app-cart-panel>
+
+            }
+
+            <!-- MENU BUTTON PAGE -->
+            @if (selectedPage === 'menu') {
+
             <app-menupage></app-menupage>
-            <!-- <app-submit-test-form> </app-submit-test-form> -->
+
+            }
+
         </div>
     </div>
 </div>
