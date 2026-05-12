@@ -43,22 +43,22 @@
                     <mat-icon>more_vert</mat-icon>
                 </button>
 
-                    <mat-menu #menu="matMenu">
-                        <button mat-menu-item (click)="onView()">
-                            <mat-icon>visibility</mat-icon>
-                            <span>View</span>
-                        </button>
-                    
-                        <button mat-menu-item (click)="onUpdate()">
-                            <mat-icon>edit</mat-icon>
-                            <span>Update</span>
-                        </button>
-                    
-                        <button mat-menu-item (click)="onDelete()">
-                            <mat-icon>delete</mat-icon>
-                            <span>Delete</span>
-                        </button>
-                    </mat-menu>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="onView(element)">
+                        <mat-icon>visibility</mat-icon>
+                        <span>View</span>
+                    </button>
+
+                    <button mat-menu-item (click)="onUpdate()">
+                        <mat-icon>edit</mat-icon>
+                        <span>Update</span>
+                    </button>
+
+                    <button mat-menu-item (click)="onDelete()">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete</span>
+                    </button>
+                </mat-menu>
 
 
             </td>

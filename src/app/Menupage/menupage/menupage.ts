@@ -9,6 +9,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { TestService } from '../../services/test.service';
 import { ViewDialog } from '../view-dialog/view-dialog';
+import { after } from 'node:test';
 
 @Component({
   selector: 'app-menupage',
@@ -38,7 +39,7 @@ export class TableBasicExample implements OnInit {
 
   constructor(
     private _testService: TestService,
-    private dialog: MatDialog
+    private _dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -55,8 +56,18 @@ export class TableBasicExample implements OnInit {
     });
   }
 
-  public onView(): void {
-    this.dialog.open(ViewDialog);
+  public onView(abc: any): void {
+    console.log(abc);
+    this._dialog.open(ViewDialog, {
+      height: '300px',
+      width: '600px',
+      data: abc
+      
+    }).afterClosed().subscribe((item) => {
+      console.log(item);
+
+    });
+
   }
 
   public onUpdate(): void {
