@@ -8,6 +8,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TestService } from '../../services/test.service';
 import { ViewDialog } from '../view-dialog/view-dialog';
 import { Router } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-menupage',
@@ -28,8 +29,9 @@ export class menuTable implements OnInit {
   constructor(
     private _testService: TestService,
     private _dialog: MatDialog,
-    private router: Router
-  ) { 
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {
 
   }
 
@@ -48,11 +50,12 @@ export class menuTable implements OnInit {
     this.getTestData();
   }
 
+
   public getTestData(): void {
     this._testService.getData().subscribe((response: any) => {
-
       if (response.code === 200.0) {
         this.dataSource = response?.result?.result || [];
+        this.cdr.detectChanges();
       }
 
     });
@@ -71,9 +74,17 @@ export class menuTable implements OnInit {
 
   }
 
-  public onUpdate(id: string): void {
-    this.router.navigate(['/menu-form', id]);
+  public onUpdate(item: any): void {
 
+    this.router.navigate(
+      ['/menu-form', item]
+    );
+
+  }
+  public new() {
+    this.router.navigate(
+      ['/menu-form']
+    );
   }
 
   public onDelete(): void {

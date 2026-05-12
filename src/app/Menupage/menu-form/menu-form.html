@@ -1,1 +1,68 @@
-<p>menu-form works!</p>
+<mat-card class="example-card">
+
+    <mat-card-content>
+
+        <form [formGroup]="menuForm" (ngSubmit)="onSave()">
+
+            <div fxLayout="row" fxLayoutAlign="start center">
+
+                <div fxLayout="row" fxFlex="100">
+
+                    <div fxLayout="column" fxFlex="100">
+
+                        <mat-form-field appearance="outline" fxFlex="50">
+
+                            <mat-label>
+                                <span class="custom-mat-label">
+                                    English name
+                                </span>
+                            </mat-label>
+
+                            <input matInput type="text" formControlName="enLabel" autocomplete="off" required />
+
+                            <mat-error>
+                                Enter english name
+                            </mat-error>
+
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" fxFlex="50">
+
+                            <mat-label>
+                                <span class="custom-mat-label">
+                                    Khmer name
+                                </span>
+                            </mat-label>
+
+                            <input matInput type="text" formControlName="khLabel" autocomplete="off" required />
+
+                            <mat-error>
+                                Enter khmer name
+                            </mat-error>
+
+                        </mat-form-field>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <button *ngIf="isNew" type="submit">
+                Save
+            </button>
+
+            <button *ngIf="!isNew" type="submit">
+                Update
+            </button>
+
+
+
+        </form>
+
+
+
+
+
+    </mat-card-content>
+
+</mat-card>

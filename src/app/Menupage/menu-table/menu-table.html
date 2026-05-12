@@ -1,3 +1,7 @@
+<button matButton (click)="new()">
+    New
+</button>
+
 <section class="example-container mat-elevation-z8" tabindex="0">
     <table mat-table [dataSource]="dataSource">
 
@@ -49,7 +53,7 @@
                         <span>View</span>
                     </button>
 
-                    <button mat-menu-item (click)="onUpdate(element.id)">
+                    <button mat-menu-item (click)="onUpdate(element)">
                         <mat-icon>edit</mat-icon>
                         <span>Update</span>
                     </button>

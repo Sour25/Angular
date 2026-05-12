@@ -11,6 +11,7 @@ export const routes: Routes = [
     { path: 'menu-table', component: menuTable },
     { path: 'menu-form', component: MenuForm }, 
     { path: 'menu-form/:id', component: MenuForm }, 
-    { path: '**', component: PageNotFound }
+    { path: '**', component: PageNotFound },
+    
 
 ];
