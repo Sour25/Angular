@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-
 import { TestService } from '../../services/test.service';
 import { ViewDialog } from '../view-dialog/view-dialog';
-import { after } from 'node:test';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menupage',
   standalone: true,
-  templateUrl: './menupage.html',
-  styleUrl: './menupage.css',
+  templateUrl: './menu-table.html',
+  styleUrl: './menu-table.css',
   imports: [
     CommonModule,
     MatTableModule,
@@ -25,7 +23,15 @@ import { after } from 'node:test';
     MatDialogModule
   ],
 })
-export class TableBasicExample implements OnInit {
+export class menuTable implements OnInit {
+
+  constructor(
+    private _testService: TestService,
+    private _dialog: MatDialog,
+    private router: Router
+  ) { 
+
+  }
 
   displayedColumns: string[] = [
     'position',
@@ -37,10 +43,6 @@ export class TableBasicExample implements OnInit {
 
   dataSource: any[] = [];
 
-  constructor(
-    private _testService: TestService,
-    private _dialog: MatDialog
-  ) { }
 
   ngOnInit(): void {
     this.getTestData();
@@ -56,13 +58,12 @@ export class TableBasicExample implements OnInit {
     });
   }
 
-  public onView(abc: any): void {
-    console.log(abc);
+  public onView(item: any): void {
+    console.log(item);
     this._dialog.open(ViewDialog, {
-      height: '300px',
       width: '600px',
-      data: abc
-      
+      data: item
+
     }).afterClosed().subscribe((item) => {
       console.log(item);
 
@@ -70,7 +71,8 @@ export class TableBasicExample implements OnInit {
 
   }
 
-  public onUpdate(): void {
+  public onUpdate(id: string): void {
+    this.router.navigate(['/menu-form', id]);
 
   }
 
@@ -78,3 +80,8 @@ export class TableBasicExample implements OnInit {
 
   }
 }
+
+
+
+
+

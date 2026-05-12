@@ -1,38 +1,17 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <div class="app-shell">
 
-
-    <app-sidebar (pageChange)="setPage($event)"></app-sidebar>
+    <app-sidebar></app-sidebar>
 
     <div class="main-content">
+
         <app-topbar></app-topbar>
 
         <div class="page-body">
-            @if (selectedPage !== 'menu') {
 
-            <app-menu-list [cart]="cart" (cartChange)="cart = $event">
-            </app-menu-list>
-
-            <app-cart-panel [cart]="cart" (cartChange)="cart = $event">
-            </app-cart-panel>
-
-            }
-
-            <!-- MENU BUTTON PAGE -->
-            @if (selectedPage === 'menu') {
-
-            <app-menupage></app-menupage>
-
-            }
+            <router-outlet></router-outlet>
 
         </div>
+
     </div>
+
 </div>

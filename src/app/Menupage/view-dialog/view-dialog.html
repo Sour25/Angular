@@ -1,10 +1,19 @@
-<h2 mat-dialog-title>Dialog with elements</h2>
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
-<h2>
-    <div>
-        Name: {{data?.enLabel}}
-    </div>
-</h2>
-<mat-dialog-actions>
-    <button matButton mat-dialog-close>Close</button>
+<h2 mat-dialog-title>View Detail Data</h2>
+
+<mat-dialog-content class="dialog-content">
+
+    <p><strong>ID:</strong> {{ data?.id }}</p>
+
+    <p><strong>Name:</strong> {{ data?.enLabel }}</p>
+
+    <p><strong>Amount:</strong> {{ data?.amount }}</p>
+
+    <p><strong>Summary Type:</strong> {{ data?.summaryType }}</p>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+        Close
+    </button>
 </mat-dialog-actions>

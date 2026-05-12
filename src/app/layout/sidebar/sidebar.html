@@ -1,26 +1,39 @@
 <aside class="sidebar">
 
+    <!-- Logo -->
     <div class="sidebar-logo">
         <mat-icon>settings</mat-icon>
     </div>
 
+    <!-- Navigation -->
     <nav class="sidebar-nav">
+
         @for (item of navItems; track $index) {
+
         <button mat-icon-button class="nav-btn" [class.active]="activeIndex() === $index" [matTooltip]="item.label"
-            matTooltipPosition="right"
-             (click)="activeIndex.set($index); pageChange.emit(item.page)">
-          
+            matTooltipPosition="right" [routerLink]="item.route" (click)="activeIndex.set($index)">
+
             <mat-icon>{{ item.icon }}</mat-icon>
+
         </button>
+
         }
+
     </nav>
 
+    <!-- Bottom -->
     <div class="sidebar-bottom">
+
         @for (item of bottomItems; track $index) {
+
         <button mat-icon-button class="nav-btn" [matTooltip]="item.label" matTooltipPosition="right">
+
             <mat-icon>{{ item.icon }}</mat-icon>
+
         </button>
+
         }
+
     </div>
 
 </aside>
