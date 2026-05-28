@@ -4,11 +4,15 @@
 
     <p><strong>ID:</strong> {{ data?.id }}</p>
 
-    <p><strong>Name:</strong> {{ data?.enLabel }}</p>
+    <p><strong>Name:</strong> {{ data?.name }}</p>
 
-    <p><strong>Amount:</strong> {{ data?.amount }}</p>
+    <p><strong>Amount:</strong> {{ data?.familyName }}</p>
 
-    <p><strong>Summary Type:</strong> {{ data?.summaryType }}</p>
+    <p><strong>Summary Type:</strong> {{ data?.isMarry }}</p>
+
+    <p><strong>Summary Type:</strong> {{ data?.phoneNumber }}</p>
+
+    <p><strong>Summary Type:</strong> {{ data?.createdAt | date:'MMMM d, y' }}</p>
 
 </mat-dialog-content>
 

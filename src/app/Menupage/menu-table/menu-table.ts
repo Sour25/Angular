@@ -9,6 +9,9 @@ import { TestService } from '../../services/test.service';
 import { ViewDialog } from '../view-dialog/view-dialog';
 import { Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
+import { DeleteDialogComponent } from '../delete-dialog/delete-dialog';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-menupage',
@@ -22,6 +25,7 @@ import { ChangeDetectorRef } from '@angular/core';
     MatMenuModule,
     MatButtonModule,
     MatDialogModule
+ 
   ],
 })
 export class menuTable implements OnInit {
@@ -36,11 +40,15 @@ export class menuTable implements OnInit {
   }
 
   displayedColumns: string[] = [
-    'position',
+    'id',
     'name',
-    'weight',
-    'symbol',
+    'familyName',
+    'academy',
+    'isMarry',
+    'phoneNumber',
+    'createdAt',
     'star'
+  
   ];
 
   dataSource: any[] = [];
@@ -53,16 +61,16 @@ export class menuTable implements OnInit {
 
   public getTestData(): void {
     this._testService.getData().subscribe((response: any) => {
-      if (response.code === 200.0) {
-        this.dataSource = response?.result?.result || [];
+      console.log("test console", response);
+        this.dataSource = response || [];
         this.cdr.detectChanges();
-      }
+      
 
     });
   }
 
   public onView(item: any): void {
-    console.log(item);
+    console.log("xxxxxxxx",item);
     this._dialog.open(ViewDialog, {
       width: '600px',
       data: item
@@ -87,8 +95,31 @@ export class menuTable implements OnInit {
     );
   }
 
-  public onDelete(): void {
+  public onDelete(item: any): void {
+    const dialogRef = this._dialog.open(DeleteDialogComponent, {
+      width: '400px',
+      data: item  
+    });
 
+    dialogRef.afterClosed().subscribe((isConfirmed: boolean) => {
+      if (isConfirmed) {
+        this._testService.deleteData(item.id).subscribe({
+          next: (response: any) => {
+            
+            Swal.fire({
+              title: "Good job!",
+              text: "Deleted item successfully!",
+              icon: "success"
+            });
+            console.log('Deleted item successfully!');
+            this.getTestData(); 
+          },
+          error: (err: any) => {
+            console.error('Failed to delete item:', err);
+          }
+        });
+      }
+    });
   }
 }
 

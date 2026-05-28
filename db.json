@@ -1,0 +1,20 @@
+{
+  "table": [
+    {
+      "id": "1",
+      "enLabel": "Takeo",
+      "khLabel": "តាកែវ"
+    },
+    {
+      "id": "2",
+      "enLabel": "Phnom Penh",
+      "khLabel": "ភ្នំពេញ"
+    },
+    {
+      "id": "3VJK1TNFyS4",
+      "enLabel": "Phnom Penh",
+      "khLabel": "ភ្នំពេញ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
